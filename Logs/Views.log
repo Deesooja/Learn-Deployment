@@ -1,0 +1,473 @@
+INFO:root: 2024-10-13 18:02:17.084744 : Testing
+WARNING:root: 2024-10-13 18:02:36.672398 : Testing
+ERROR:root: 2024-10-13 18:04:42.236552 : Testing
+INFO:django.utils.autoreload:/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/urls.py changed, reloading.
+INFO:django.utils.autoreload:/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/urls.py changed, reloading.
+INFO:django.utils.autoreload:/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/CronSetup/urls.py changed, reloading.
+INFO:django.utils.autoreload:/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/urls.py changed, reloading.
+WARNING:django.request:Not Found: /get-list
+INFO:django.utils.autoreload:/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/urls.py changed, reloading.
+WARNING:django.request:Not Found: /get-list
+WARNING:django.request:Not Found: /get-list
+WARNING:django.request:Not Found: /get-list
+WARNING:django.request:Not Found: /get-list
+ERROR:root: 2024-10-15 16:27:12.108661 : LineNumber :- 29 : cannot unpack non-iterable type object
+ERROR:django.request:Internal Server Error: /todo/get-list
+Traceback (most recent call last):
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/views.py", line 29, in get
+    filterd_todo_qs = Todo.objects.filter(filter)
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/django/db/models/query.py", line 1476, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/django/db/models/query.py", line 1494, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/django/db/models/query.py", line 1501, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1609, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1641, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1488, in build_filter
+    arg, value = filter_expr
+TypeError: cannot unpack non-iterable type object
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/views.py", line 33, in get
+    return uls_response(status_code=500, message=ex, data=[])
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/Services/response.py", line 6, in uls_response
+    return JsonResponse(data_dict)
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/django/http/response.py", line 733, in __init__
+    data = json.dumps(data, cls=encoder, **json_dumps_params)
+  File "/usr/lib/python3.10/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "/usr/lib/python3.10/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/lib/python3.10/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/django/core/serializers/json.py", line 106, in default
+    return super().default(o)
+  File "/usr/lib/python3.10/json/encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type TypeError is not JSON serializable
+ERROR:root: 2024-10-15 16:30:10.344144 : LineNumber :- 29 : cannot unpack non-iterable type object
+ERROR:django.request:Internal Server Error: /todo/get-list
+Traceback (most recent call last):
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/views.py", line 29, in get
+    filterd_todo_qs = Todo.objects.filter(filter)
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/django/db/models/query.py", line 1476, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/django/db/models/query.py", line 1494, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/django/db/models/query.py", line 1501, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1609, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1641, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1488, in build_filter
+    arg, value = filter_expr
+TypeError: cannot unpack non-iterable type object
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/views.py", line 33, in get
+    return uls_response(status_code=500, message=ex, data=[])
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/Services/response.py", line 6, in uls_response
+    return JsonResponse(data_dict)
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/django/http/response.py", line 733, in __init__
+    data = json.dumps(data, cls=encoder, **json_dumps_params)
+  File "/usr/lib/python3.10/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "/usr/lib/python3.10/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/lib/python3.10/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/django/core/serializers/json.py", line 106, in default
+    return super().default(o)
+  File "/usr/lib/python3.10/json/encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type TypeError is not JSON serializable
+INFO:django.utils.autoreload:/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/serializers.py changed, reloading.
+ERROR:root: 2024-10-17 03:05:54.163974 : LineNumber :- 36 : [ErrorDetail(string='parameter page and page-sze must be numer', code='invalid')]
+ERROR:django.request:Internal Server Error: /todo/get-list
+Traceback (most recent call last):
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/views.py", line 31, in get
+    page = int(page)
+ValueError: invalid literal for int() with base 10: 'a'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/views.py", line 36, in get
+    raise ValidationError("parameter page and page-sze must be numer")
+rest_framework.exceptions.ValidationError: [ErrorDetail(string='parameter page and page-sze must be numer', code='invalid')]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/views.py", line 50, in get
+    return uls_response(status_code=500, message=ex, data=[])
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/Services/response.py", line 6, in uls_response
+    return JsonResponse(data_dict)
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/django/http/response.py", line 733, in __init__
+    data = json.dumps(data, cls=encoder, **json_dumps_params)
+  File "/usr/lib/python3.10/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "/usr/lib/python3.10/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/lib/python3.10/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/django/core/serializers/json.py", line 106, in default
+    return super().default(o)
+  File "/usr/lib/python3.10/json/encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type ValidationError is not JSON serializable
+INFO:django.utils.autoreload:/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/views.py changed, reloading.
+ERROR:root: 2024-10-17 03:07:15.927207 : LineNumber :- 36 : exceptions must derive from BaseException
+ERROR:django.request:Internal Server Error: /todo/get-list
+Traceback (most recent call last):
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/views.py", line 31, in get
+    page = int(page)
+ValueError: invalid literal for int() with base 10: 'a'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/views.py", line 36, in get
+    raise ("parameter page and page-sze must be numer")
+TypeError: exceptions must derive from BaseException
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/views.py", line 50, in get
+    return uls_response(status_code=500, message=ex, data=[])
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/Services/response.py", line 6, in uls_response
+    return JsonResponse(data_dict)
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/django/http/response.py", line 733, in __init__
+    data = json.dumps(data, cls=encoder, **json_dumps_params)
+  File "/usr/lib/python3.10/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "/usr/lib/python3.10/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/lib/python3.10/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/django/core/serializers/json.py", line 106, in default
+    return super().default(o)
+  File "/usr/lib/python3.10/json/encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type TypeError is not JSON serializable
+INFO:django.utils.autoreload:/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/views.py changed, reloading.
+ERROR:root: 2024-10-17 03:09:38.663682 : LineNumber :- 36 : exceptions must derive from BaseException
+ERROR:django.request:Internal Server Error: /todo/get-list
+Traceback (most recent call last):
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/views.py", line 31, in get
+    page = int(page)
+ValueError: invalid literal for int() with base 10: 'a'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/views.py", line 36, in get
+    raise ("parameter page and page-sze must be numer")
+TypeError: exceptions must derive from BaseException
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/views.py", line 52, in get
+    return uls_response(status_code=500, message=ex, data=[])
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/Services/response.py", line 6, in uls_response
+    return JsonResponse(data_dict)
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/django/http/response.py", line 733, in __init__
+    data = json.dumps(data, cls=encoder, **json_dumps_params)
+  File "/usr/lib/python3.10/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "/usr/lib/python3.10/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/lib/python3.10/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/django/core/serializers/json.py", line 106, in default
+    return super().default(o)
+  File "/usr/lib/python3.10/json/encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type TypeError is not JSON serializable
+ERROR:root: 2024-10-17 03:09:43.918442 : LineNumber :- 36 : exceptions must derive from BaseException
+ERROR:django.request:Internal Server Error: /todo/get-list
+Traceback (most recent call last):
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/views.py", line 31, in get
+    page = int(page)
+ValueError: invalid literal for int() with base 10: 'a'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/views.py", line 36, in get
+    raise ("parameter page and page-sze must be numer")
+TypeError: exceptions must derive from BaseException
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/views.py", line 52, in get
+    return uls_response(status_code=500, message=ex, data=[])
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/Services/response.py", line 6, in uls_response
+    return JsonResponse(data_dict)
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/django/http/response.py", line 733, in __init__
+    data = json.dumps(data, cls=encoder, **json_dumps_params)
+  File "/usr/lib/python3.10/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "/usr/lib/python3.10/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/lib/python3.10/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/django/core/serializers/json.py", line 106, in default
+    return super().default(o)
+  File "/usr/lib/python3.10/json/encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type TypeError is not JSON serializable
+INFO:django.utils.autoreload:/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/views.py changed, reloading.
+ERROR:root: 2024-10-17 03:13:03.847475 : LineNumber :- 36 : parameter page and page-sze must be numer
+ERROR:django.request:Internal Server Error: /todo/get-list
+Traceback (most recent call last):
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/views.py", line 31, in get
+    page = int(page)
+ValueError: invalid literal for int() with base 10: 'a'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/views.py", line 36, in get
+    raise ValueError("parameter page and page-sze must be numer")
+ValueError: parameter page and page-sze must be numer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/views.py", line 52, in get
+    return uls_response(status_code=500, message=ex, data=[])
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/Services/response.py", line 6, in uls_response
+    return JsonResponse(data_dict)
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/django/http/response.py", line 733, in __init__
+    data = json.dumps(data, cls=encoder, **json_dumps_params)
+  File "/usr/lib/python3.10/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "/usr/lib/python3.10/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/lib/python3.10/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "/home/deesooja01/Projects/Django/DjangoCronsSetup/venv/lib/python3.10/site-packages/django/core/serializers/json.py", line 106, in default
+    return super().default(o)
+  File "/usr/lib/python3.10/json/encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type ValueError is not JSON serializable
+INFO:django.utils.autoreload:/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/views.py changed, reloading.
+ERROR:root: 2024-10-17 03:16:25.630391 : LineNumber :- 36 : parameter page and page-sze must be numer
+ERROR:django.request:Internal Server Error: /todo/get-list
+INFO:django.utils.autoreload:/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/views.py changed, reloading.
+ERROR:root: 2024-10-17 03:16:50.903278 : LineNumber :- 36 : parameter page and page-sze must be numer
+ERROR:django.request:Internal Server Error: /todo/get-list
+INFO:django.utils.autoreload:/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/views.py changed, reloading.
+ERROR:root: 2024-10-17 03:17:41.134515 : LineNumber :- 36 : parameter page and page-sze must be numer
+ERROR:django.request:Internal Server Error: /todo/get-list
+INFO:django.utils.autoreload:/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/views.py changed, reloading.
+ERROR:root: 2024-10-17 03:22:04.946957 : LineNumber :- 35 : exceptions must derive from BaseException
+ERROR:django.request:Internal Server Error: /todo/get-list
+INFO:django.utils.autoreload:/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/views.py changed, reloading.
+ERROR:root: 2024-10-17 03:22:37.471576 : LineNumber :- 35 : exceptions must derive from BaseException
+ERROR:django.request:Internal Server Error: /todo/get-list
+ERROR:root: 2024-10-17 03:22:43.704069 : LineNumber :- 40 : parameter page and page-sze must be numer
+ERROR:django.request:Internal Server Error: /todo/get-list
+ERROR:root: 2024-10-17 03:22:49.706288 : LineNumber :- 35 : exceptions must derive from BaseException
+ERROR:django.request:Internal Server Error: /todo/get-list
+INFO:django.utils.autoreload:/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/views.py changed, reloading.
+ERROR:root: 2024-10-17 03:23:39.427312 : LineNumber :- 35 : [ErrorDetail(string='page and page_size must be grater then 1', code='invalid')]
+ERROR:django.request:Internal Server Error: /todo/get-list
+INFO:django.utils.autoreload:/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/views.py changed, reloading.
+ERROR:root: 2024-10-17 03:24:24.299458 : LineNumber :- 40 : parameter page and page-sze must be numer
+ERROR:django.request:Internal Server Error: /todo/get-list
+INFO:django.utils.autoreload:/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/views.py changed, reloading.
+ERROR:root: 2024-10-17 03:24:58.368885 : LineNumber :- 35 : page and page_size must be grater then 1
+ERROR:django.request:Internal Server Error: /todo/get-list
+INFO:django.utils.autoreload:/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/views.py changed, reloading.
+ERROR:root: 2024-10-17 03:25:12.104546 : LineNumber :- 35 : [ErrorDetail(string='page and page_size must be grater then 1', code='invalid')]
+ERROR:django.request:Internal Server Error: /todo/get-list
+INFO:django.utils.autoreload:/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/views.py changed, reloading.
+ERROR:root: 2024-10-17 03:33:49.305713 : LineNumber :- 35 : [ErrorDetail(string='page and page_size must be grater then 1', code='invalid')]
+ERROR:django.request:Internal Server Error: /todo/get-list
+ERROR:root: 2024-10-17 03:33:55.379480 : LineNumber :- 40 : [ErrorDetail(string='parameter page and page-sze must be numer', code='invalid')]
+ERROR:django.request:Internal Server Error: /todo/get-list
+WARNING:django.request:Not Found: /test
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /todo/1//create-todo
+WARNING:django.request:Method Not Allowed: /todo/1/create-todo
+ERROR:root: 2024-10-26 03:57:39.635693 : LineNumber :- 86 : Cannot assign "1": "Todo.user" must be a "User" instance.
+ERROR:django.request:Internal Server Error: /todo/1/create-todo
+INFO:django.utils.autoreload:/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/models.py changed, reloading.
+INFO:django.utils.autoreload:/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/models.py changed, reloading.
+INFO:django.utils.autoreload:/home/deesooja01/Projects/Django/DjangoCronsSetup/CronSetup/Myapp/models.py changed, reloading.
