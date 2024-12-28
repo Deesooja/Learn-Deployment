@@ -85,13 +85,27 @@ WSGI_APPLICATION = 'CronSetup.wsgi.application'
 #     }
 # }
 
+"""FOR LOCAL"""
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'mydjangodb',
+#         'USER': 'django_user',
+#         'PASSWORD': 'Deesooja@123',
+#         'HOST': 'localhost',  # or use '127.0.0.1'
+#         'PORT': '3306',
+#     }
+# }
+
+"""FOR LIVE (RDS)"""
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'mydjangodb',
         'USER': 'django_user',
-        'PASSWORD': 'Deesooja@123',
-        'HOST': 'localhost',  # or use '127.0.0.1'
+        'PASSWORD': 'Deesooja3#%*(_',
+        'HOST': 'mydjangodb.ct0q8yai68au.us-east-1.rds.amazonaws.com',
         'PORT': '3306',
     }
 }
