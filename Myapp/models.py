@@ -11,3 +11,13 @@ class Todo(models.Model):
     estimated_completion_time = models.DateTimeField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+
+class UserRecord(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    pending = models.IntegerField()
+    completed = models.IntegerField()
+    deleyed = models.IntegerField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    
