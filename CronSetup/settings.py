@@ -105,7 +105,7 @@ DATABASES = {
         'NAME': 'mydjangodb',
         'USER': 'django_user',
         'PASSWORD': 'Deesooja3#%*(_',
-        'HOST': 'mydjangodb.ct0q8yai68au.us-east-1.rds.amazonaws.com',
+        'HOST': 'mydjangodb.cxskygy0ynaw.ap-south-1.rds.amazonaws.com',
         'PORT': '3306',
     }
 }
