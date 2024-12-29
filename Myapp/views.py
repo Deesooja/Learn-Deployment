@@ -101,4 +101,6 @@ class CreateTodo(APIView):
             logger.error(ex)
             return uls_response(status_code=500, message=str(ex), data=[])
             
-                                                       
+
+class GetUserReport(APIView):
+    pass                                              
