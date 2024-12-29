@@ -3,7 +3,7 @@ from rest_framework.views import APIView
 from Myapp.models import *
 from django.db.models import Q
 from Myapp.Services.response import uls_response
-from Myapp.serializers import TodoSerializer
+from Myapp.serializers import TodoSerializer, UserRecordSerializer
 from rest_framework.exceptions import ValidationError
 from datetime import datetime, timedelta
 
@@ -105,7 +105,8 @@ class CreateTodo(APIView):
 class GetUserReport(APIView):
     def get(self, request, user_id):
         try:
-            pass
+            user_record_qs = UserRecord.objects.filter(user=user_id)
+            return uls_response(status_code=200, message="SUCCESS", data=UserRecordSerializer(user_record_qs, many=True).data)
         except Exception as ex:
             logger.error(ex)
             return uls_response(status_code=500, message=str(ex), data=[])
