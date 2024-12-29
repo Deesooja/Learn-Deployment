@@ -31,5 +31,5 @@ jobs:
           sudo systemctl restart nginx  # Restart your service
           sudo supervisorctl restart gunicorn  # Restart gunicorn
           sudo supervisorctl restart celery  # Restart celery
-          sudo systemctl restart celerybeat  # Restart celerybeat
+          sudo supervisorctl restart celerybeat  # Restart celerybeat
         EOF
