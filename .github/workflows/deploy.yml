@@ -1,0 +1,35 @@
+name: Deploy Django App
+
+on:
+  push:
+    branches:
+      - main  # Change this to your default branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up SSH
+      run: |
+        mkdir -p ~/.ssh
+        echo "${{ secrets.AWS_SSH_KEY }}" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+        ssh-keyscan -H ${{ secrets.AWS_HOST }} >> ~/.ssh/known_hosts
+
+    - name: Deploy to AWS
+      run: |
+        ssh ${{ secrets.AWS_USER }}@${{ secrets.AWS_HOST }} << 'EOF'
+          cd /home/ubuntu/Learn-Deployment
+          git pull origin main  # Change this to your branch if needed
+          source /home/ubuntu/Learn-Deployment/venv/bin/activate  # Activate your virtual environment
+          pip install -r requirements.txt  # Install dependencies
+          python manage.py migrate  # Run migrations
+          sudo systemctl restart nginx  # Restart your service
+          sudo supervisorctl restart gunicorn  # Restart gunicorn
+          sudo supervisorctl restart celery  # Restart celery
+          sudo systemctl restart celerybeat  # Restart celerybeat
+        EOF
