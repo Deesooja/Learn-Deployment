@@ -102,10 +102,10 @@ WSGI_APPLICATION = 'CronSetup.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'mydjangodb',
+        'NAME': 'LearnDeploymentDB',
         'USER': 'django_user',
         'PASSWORD': 'Deesooja3#%*(_',
-        'HOST': 'mydjangodb.cxskygy0ynaw.ap-south-1.rds.amazonaws.com',
+        'HOST': 'djangodb.cxskygy0ynaw.ap-south-1.rds.amazonaws.com', 
         'PORT': '3306',
     }
 }
