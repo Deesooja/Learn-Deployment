@@ -103,4 +103,5 @@ class CreateTodo(APIView):
             
 
 class GetUserReport(APIView):
-    pass                                              
+    def get(self, request, user_id):
+        pass
