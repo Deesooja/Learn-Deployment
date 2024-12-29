@@ -104,4 +104,8 @@ class CreateTodo(APIView):
 
 class GetUserReport(APIView):
     def get(self, request, user_id):
-        pass
+        try:
+            pass
+        except Exception as ex:
+            logger.error(ex)
+            return uls_response(status_code=500, message=str(ex), data=[])
